@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/home/home_quran/suradetails.dart';
+import 'package:islamy/home/home_hadeth/hadeth_details.dart';
+import 'package:islamy/home/home_hadeth/item_hadeth_name.dart';
+import 'package:islamy/home/home_quran/sura_details.dart';
 import 'package:islamy/theme_data.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'homescreen.dart';
 
 void main() {
@@ -19,9 +21,14 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routName:(context)=>HomeScreen(),
         SuraDetails.routName:(context)=>SuraDetails(),
+        HadethDetails.routName:(context)=>HadethDetails(),
+
       },
       darkTheme:MythemeData.darkTheme,
       theme:MythemeData.lightTheme,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale('ar'),
     );
   }
 }

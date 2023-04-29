@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/home/hades.dart';
+import 'package:islamy/home/home_hadeth/hadeth_tab.dart';
 import 'package:islamy/home/home_quran/quran_tab.dart';
-import 'package:islamy/home/radio.dart';
-import 'package:islamy/home/tasbeh.dart';
+import 'package:islamy/home/home_radio/radio_tab.dart';
+import 'package:islamy/home/home_setteing/settings_tab.dart';
+import 'package:islamy/home/home_tasbeh/tasbeh_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String routName = 'home';
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
             title: Text(
-              'Islami',
+              AppLocalizations.of(context)!.app_title,
               style: Theme.of(context).textTheme.headline1,
             ),
           ),
@@ -48,25 +51,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_quran.png'),
                   ),
-                  label: 'Quran',
+                  label: AppLocalizations.of(context)!.quran,
                 ),
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_hadeth.png'),
                   ),
-                  label: 'Hadeth',
+                  label:AppLocalizations.of(context)!.hadeth,
                 ),
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_radio.png'),
                   ),
-                  label: 'Radio',
+                  label:AppLocalizations.of(context)!.radio,
                 ),
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_sebha.png'),
                   ),
-                  label: 'Tasbeh',
+                  label:AppLocalizations.of(context)!.tasbeh,
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: AppLocalizations.of(context)!.setting,
                 ),
               ],
             ),
@@ -77,6 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
   List tabs=[
-    QuranTab(),TasbehTab(),RadioTab(),HadesTab(),
+    QuranTab(),HadesTab(),RadioTab(),TasbehTab(),SettingsTab(),
   ];
 }

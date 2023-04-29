@@ -39,6 +39,11 @@ primaryColor: lightprimary,
          fontSize: 25,
          fontWeight: FontWeight.w500,
        ),
+       headline3: TextStyle(
+         color: lightprimary,
+         fontSize: 25,
+         fontWeight: FontWeight.w700,
+       ),
      ),
  );
  static ThemeData darkTheme=ThemeData();
